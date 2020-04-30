@@ -1,0 +1,73 @@
+--
+-- For more information on build.settings, see the Project Build Settings guide at:
+-- https://docs.coronalabs.com/guide/distribution/buildSettings
+--
+
+settings =
+{
+	orientation =
+	{
+		-- Supported values for orientation:
+		-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+		default = "landscapeRight",
+		supported = { "landscapeRight", },
+	},
+
+	--
+	-- Android section
+	--
+	android =
+	{
+		usesPermissions =
+		{
+			"android.permission.INTERNET",
+			 "android.permission.VIBRATE",
+		},
+
+	},
+
+	--
+	-- iOS section
+	--
+	iphone =
+	{
+		xcassets = "Images.xcassets",
+		plist =
+		{
+			--UILaunchStoryboardName = "LaunchScreen",
+			UIStatusBarHidden = true,
+			CFBundleName = "Virus Hunter Strike"
+		},
+	},
+
+	--
+	-- Plugins section
+	--
+	plugins =
+	{
+	
+	},
+
+
+  splashScreen = 
+    {
+          ios = {
+            enable = true,
+            image = "mySplashScreen.png"
+        },
+        android = {
+            enable = true,
+            image = "mySplashScreen.png"
+        }
+    },
+
+	--
+	-- Project section
+	--
+	excludeFiles =
+	{
+		-- Exclude unnecessary files for each platform
+		all = { "Icon.png", "Icon-*dpi.png"},
+		android = { "LaunchScreen.storyboardc",  "Images.xcassets" },
+	},
+}
